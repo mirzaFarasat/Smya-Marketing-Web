@@ -194,10 +194,7 @@ export default function Footer() {
             >
               {[
                 { name: "About Us", path: "/about" },
-                { name: "Our Approach", path: "/approach" },
                 { name: "Case Studies", path: "/work" },
-                { name: "Careers", path: "/careers" },
-                { name: "Blog", path: "/blog" },
                 { name: "Contact", path: "/contact" }
               ].map((item, index) => (
                 <motion.li

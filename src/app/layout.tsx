@@ -1,11 +1,15 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Inter, Space_Grotesk } from "next/font/google"
 import "./globals.scss"
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 
 const inter = Inter({ subsets: ["latin"] })
+const spaceGrotesk = Space_Grotesk({ 
+  subsets: ['latin'],
+  variable: '--font-space-grotesk',
+})
 
 export const metadata: Metadata = {
   title: "SMYA | Marketing Agency",
@@ -20,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} ${spaceGrotesk.variable}`}>
         <Navbar />
         <main>{children}</main>
         <Footer />

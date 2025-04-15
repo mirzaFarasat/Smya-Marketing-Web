@@ -66,7 +66,7 @@ const WhyChooseUs = () => {
   };
 
   return (
-    <section className="py-24 md:py-32 bg-gradient-to-b from-gray-50 to-white overflow-hidden relative">
+    <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white overflow-hidden relative">
       {/* Animated background elements */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -101,7 +101,7 @@ const WhyChooseUs = () => {
       </motion.div>
 
       <div className="container mx-auto px-6 max-w-7xl relative">
-        <div className="grid md:grid-cols-2 gap-20 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
           {/* Left Column - Text Content */}
           <motion.div
             initial="hidden"
@@ -112,7 +112,7 @@ const WhyChooseUs = () => {
           >
             <motion.h2
               variants={itemVariants}
-              className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-12 leading-tight"
+              className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-8 md:mb-12 leading-tight"
             >
               Why Choose{" "}
               <motion.span
@@ -129,7 +129,7 @@ const WhyChooseUs = () => {
 
             <motion.div
               variants={containerVariants}
-              className="space-y-10"
+              className="space-y-8 md:space-y-10"
             >
               {reasons.map((reason, index) => (
                 <motion.div
@@ -145,22 +145,22 @@ const WhyChooseUs = () => {
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <CheckCircle className="h-7 w-7 text-primary flex-shrink-0 mt-1 transition-colors group-hover:text-primary-dark" />
+                    <CheckCircle className="h-6 w-6 md:h-7 md:w-7 text-primary flex-shrink-0 mt-1 transition-colors group-hover:text-primary-dark" />
                   </motion.div>
                   <motion.div
-                    className="ml-6"
+                    className="ml-4 md:ml-6"
                     whileHover={{ x: 5 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
                     <motion.h3
-                      className="text-xl md:text-2xl font-semibold text-gray-900 mb-3 tracking-tight"
+                      className="text-lg md:text-xl lg:text-2xl font-semibold text-gray-900 mb-2 md:mb-3 tracking-tight"
                       whileHover={{ color: "#6366f1" }}
                       transition={{ duration: 0.2 }}
                     >
                       {reason.title}
                     </motion.h3>
                     <motion.p
-                      className="text-gray-700 leading-relaxed md:text-lg"
+                      className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed"
                       whileHover={{ color: "#4b5563" }}
                       transition={{ duration: 0.2 }}
                     >
@@ -178,7 +178,7 @@ const WhyChooseUs = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="relative h-[600px] md:h-[650px] rounded-2xl overflow-hidden shadow-2xl"
+            className="relative h-[400px] md:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl"
           >
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -202,12 +202,12 @@ const WhyChooseUs = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, duration: 0.5 }}
-                className="absolute bottom-6 left-6 text-white"
+                className="absolute bottom-4 md:bottom-6 left-4 md:left-6 text-white"
               >
                 <motion.p
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  className="text-lg font-medium opacity-90"
+                  className="text-base md:text-lg font-medium opacity-90"
                 >
                   Elevate Your Brand with SMYA
                 </motion.p>
