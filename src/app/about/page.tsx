@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image"
-import { motion } from "framer-motion"
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function AboutPage() {
   const containerVariants = {
@@ -13,7 +13,7 @@ export default function AboutPage() {
         delayChildren: 0.3,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -25,7 +25,7 @@ export default function AboutPage() {
         ease: "easeOut",
       },
     },
-  }
+  };
 
   const cardVariants = {
     hidden: { opacity: 0, scale: 0.9 },
@@ -46,7 +46,7 @@ export default function AboutPage() {
         damping: 10,
       },
     },
-  }
+  };
 
   const statVariants = {
     hidden: { opacity: 0, scale: 0.8 },
@@ -66,7 +66,7 @@ export default function AboutPage() {
         damping: 10,
       },
     },
-  }
+  };
 
   return (
     <div className="bg-white min-h-screen font-sans">
@@ -162,7 +162,7 @@ export default function AboutPage() {
                     "Digital Marketing",
                     "Content Creation",
                     "Analytics & Reporting",
-                  ].map((item, index) => (
+                  ].map((item) => (
                     <motion.li
                       key={item}
                       variants={itemVariants}
@@ -201,9 +201,9 @@ export default function AboutPage() {
                     { number: "250+", label: "Successful Projects" },
                     { number: "85%", label: "Client Retention Rate" },
                     { number: "12+", label: "Industry Awards" },
-                  ].map((stat, index) => (
+                  ].map((stat) => (
                     <motion.div
-                      key={index}
+                      key={stat.label}
                       variants={statVariants}
                       whileHover="hover"
                     >
@@ -244,7 +244,7 @@ export default function AboutPage() {
                 variants={itemVariants}
                 className="text-gray-700"
               >
-                We partner closely with our clients, offering tailored strategies that address their unique objectives. From emerging startups to established enterprises, SMYA provides the expertise and resources to navigate the complexities of today's market and achieve sustainable growth.
+                We partner closely with our clients, offering tailored strategies that address their unique objectives. From emerging startups to established enterprises, SMYA provides the expertise and resources to navigate the complexities of today&apos;s market and achieve sustainable growth.
               </motion.p>
 
               <motion.p
@@ -271,9 +271,9 @@ export default function AboutPage() {
                     title: "Proven Impact",
                     description: "Tangible results that advance your business.",
                   },
-                ].map((item, index) => (
+                ].map((item) => (
                   <motion.li
-                    key={index}
+                    key={item.title}
                     variants={itemVariants}
                     whileHover={{ x: 5 }}
                     transition={{ type: "spring", stiffness: 300 }}
@@ -290,12 +290,12 @@ export default function AboutPage() {
                 variants={itemVariants}
                 className="text-gray-700 mt-6"
               >
-                At SMYA, we're committed to excellence and collaboration. Let's work together to elevate your brand and achieve extraordinary success.
+                At SMYA, we&apos;re committed to excellence and collaboration. Let&apos;s work together to elevate your brand and achieve extraordinary success.
               </motion.p>
             </motion.div>
           </div>
         </div>
       </motion.div>
     </div>
-  )
+  );
 }

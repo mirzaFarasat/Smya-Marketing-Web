@@ -1,10 +1,9 @@
 'use client'
 
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 
 export default function Hero() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const cursorX = useMotionValue(0)
   const cursorY = useMotionValue(0)
 
@@ -20,14 +19,13 @@ export default function Hero() {
       const { clientX, clientY } = e
       const x = clientX - window.innerWidth / 2
       const y = clientY - window.innerHeight / 2
-      setMousePosition({ x, y })  
       cursorX.set(x)
       cursorY.set(y)
     }
 
     window.addEventListener('mousemove', handleMouseMove)
     return () => window.removeEventListener('mousemove', handleMouseMove)
-  }, [])
+  }, [cursorX, cursorY])
 
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-[#0A0F1C]">

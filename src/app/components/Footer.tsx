@@ -118,9 +118,9 @@ export default function Footer() {
                 { icon: Twitter, label: "Twitter" },
                 { icon: Instagram, label: "Instagram" },
                 { icon: Linkedin, label: "LinkedIn" },
-              ].map((social, index) => (
+              ].map((social) => (
                 <motion.div
-                  key={index}
+                  key={social.label}
                   variants={socialIconVariants}
                   whileHover="hover"
                 >
@@ -156,7 +156,7 @@ export default function Footer() {
                 "Social Media Management",
                 "Performance Marketing",
                 "Marketing Automation"
-              ].map((service, index) => (
+              ].map((service) => (
                 <motion.li
                   key={service}
                   variants={itemVariants}
@@ -196,7 +196,7 @@ export default function Footer() {
                 { name: "About Us", path: "/about" },
                 { name: "Case Studies", path: "/work" },
                 { name: "Contact", path: "/contact" }
-              ].map((item, index) => (
+              ].map((item) => (
                 <motion.li
                   key={item.name}
                   variants={itemVariants}
@@ -280,34 +280,34 @@ export default function Footer() {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            &copy; {currentYear} SMYA Marketing. All rights reserved.
+            © {currentYear} SMYA Marketing. All rights reserved.
           </motion.p>
           <motion.div
             variants={containerVariants}
             className="flex space-x-8"
           >
-            {[
-              { name: "Privacy Policy", path: "/privacy" },
-              { name: "Terms of Service", path: "/terms" },
-              { name: "Cookie Policy", path: "/cookies" },
-            ].map((item, index) => (
-              <motion.div
-                key={item.name}
-                variants={itemVariants}
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <Link
-                  href={item.path}
-                  className="text-gray-500 hover:text-primary-400 transition-colors duration-300 text-sm"
+              {[
+                { name: "Privacy Policy", path: "/PrivacyPolicy" },
+                { name: "Terms of Service", path: "/TermsOfService" },
+                { name: "Cookie Policy", path: "/CookiePolicy" },
+              ].map((item) => (
+                <motion.div
+                  key={item.name}
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 300 }}
                 >
-                  {item.name}
-                </Link>
-              </motion.div>
-            ))}
+                  <Link
+                    href={item.path}
+                    className="text-gray-500 hover:text-primary-400 transition-colors duration-300 text-sm"
+                  >
+                    {item.name}
+                  </Link>
+                </motion.div>
+              ))}
+            </motion.div>
           </motion.div>
-        </motion.div>
-      </div>
-    </footer>
-  )
-}                        
+        </div>
+      </footer>
+    )
+}

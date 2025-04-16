@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowRight } from "lucide-react"
 
 export default function About() {
   return (
@@ -120,7 +119,7 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="text-base md:text-lg leading-relaxed text-gray-800 font-medium"
             >
-              We're a <span className="font-poppins font-bold text-blue-600">performance-obsessed</span> marketing agency partnering with bold, visionary brands. By blending <span className="font-poppins font-bold text-purple-600">data-driven insights</span> with <span className="font-poppins font-bold text-pink-600">creative brilliance</span>, we deliver campaigns that captivate and convert.
+              We&apos;re a <span className="font-poppins font-bold text-blue-600">performance-obsessed</span> marketing agency partnering with bold, visionary brands. By blending <span className="font-poppins font-bold text-purple-600">data-driven insights</span> with <span className="font-poppins font-bold text-pink-600">creative brilliance</span>, we deliver campaigns that captivate and convert.
             </motion.p>
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -195,7 +194,7 @@ export default function About() {
             transition={{ duration: 0.5, delay: 1 }}
             className="text-gray-100 mb-6 leading-relaxed"
           >
-            Let's collaborate to create something extraordinary. Your success starts here.
+            Let&apos;s collaborate to create something extraordinary. Your success starts here.
           </motion.p>
           <motion.button 
             whileHover={{ scale: 1.05, y: -2 }}

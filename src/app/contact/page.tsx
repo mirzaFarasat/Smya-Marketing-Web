@@ -1,4 +1,4 @@
-'use client'
+"use client"
 
 import { motion } from "framer-motion"
 import { useState, ChangeEvent, FormEvent, useRef, useEffect } from "react"
@@ -132,13 +132,13 @@ export default function ContactPage() {
         subject: "",
         message: "",
       })
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('Submission error:', error)
-      setSubmitError(
-        error?.text || 
-        error?.message || 
-        'Failed to send message. Please try again later.'
-      )
+      let errorMessage = 'Failed to send message. Please try again later.'
+      if (error instanceof Error) {
+        errorMessage = error.message || errorMessage
+      }
+      setSubmitError(errorMessage)
     } finally {
       setIsSubmitting(false)
     }
@@ -432,7 +432,7 @@ export default function ContactPage() {
                     ) : (
                       <>
                         <Send className="h-5 w-5" />
-                        Send Message
+                        <span>Send Message</span>
                       </>
                     )}
                   </button>
@@ -464,4 +464,4 @@ export default function ContactPage() {
       </div>
     </div>
   )
-} 
+}

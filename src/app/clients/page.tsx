@@ -113,7 +113,7 @@ export default function ClientsPage() {
           variants={itemVariants}
           className="text-xl text-gray-700 leading-relaxed"
         >
-          We've had the privilege of working with a wide range of brands across
+          We&apos;ve had the privilege of working with a wide range of brands across
           different industries. From tech startups to global corporations, our
           diverse clientele is a testament to our adaptability and expertise.
         </motion.p>

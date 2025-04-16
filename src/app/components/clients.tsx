@@ -103,7 +103,7 @@ export default function Clients() {
             variants={itemVariants}
             className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto"
           >
-            We've partnered with remarkable clients—from ambitious startups to industry leaders—crafting campaigns that resonate and deliver measurable impact.
+            We&apos;ve partnered with remarkable clients—from ambitious startups to industry leaders—crafting campaigns that resonate and deliver measurable impact.
           </motion.p>
         </motion.div>
 

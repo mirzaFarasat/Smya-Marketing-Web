@@ -112,7 +112,7 @@ export default function Navbar() {
                   : "bg-white text-teal-700 hover:bg-teal-50 hover:text-teal-800"
               }`}
             >
-              Let's Talk
+              Let&apos;s Talk
             </Link>
           </motion.div>
 
@@ -187,7 +187,7 @@ export default function Navbar() {
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Let's Talk
+                  Let&apos;s Talk
                 </Link>
               </motion.div>
             </nav>

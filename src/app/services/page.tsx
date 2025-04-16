@@ -1,4 +1,4 @@
-'use client'
+"use client"
 
 import { ArrowRight, BarChart, Globe, Megaphone, PenTool, Share2, Users } from "lucide-react"
 import Link from "next/link"
@@ -31,7 +31,7 @@ export default function ServicesPage() {
       icon: <PenTool className="h-12 w-12 text-blue-600" />,
       title: "Content Creation",
       description:
-        "Stand out with bold, creative content that captures attention and tells your brand's story.",
+        "Stand out with bold, creative content that captures attention and tells your brand\'s story.",
       accentColor: "blue-600",
     },
     {
@@ -103,7 +103,7 @@ export default function ServicesPage() {
             variants={itemVariants}
             className="text-5xl md:text-6xl font-bold mb-6 text-gray-900 font-montserrat tracking-tight"
           >
-            Unleash Your Brand's{" "}
+            Unleash Your Brand\'s{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-purple-600">
               Potential
             </span>
@@ -112,7 +112,7 @@ export default function ServicesPage() {
             variants={itemVariants}
             className="text-xl md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto font-open-sans"
           >
-            We're a marketing agency that turns ideas into impact with innovative, results-driven solutions.
+            We\'re a marketing agency that turns ideas into impact with innovative, results-driven solutions.
           </motion.p>
         </motion.div>
 
@@ -173,14 +173,14 @@ export default function ServicesPage() {
             <motion.p 
               className="text-white text-lg md:text-xl leading-relaxed mb-8 max-w-2xl mx-auto font-open-sans"
             >
-              Let's craft a marketing strategy that grabs attention, drives growth, and sets you apart. Your success starts here.
+              Let\'s craft a marketing strategy that grabs attention, drives growth, and sets you apart. Your success starts here.
             </motion.p>
             
             <Link
               href="#"
               className="inline-flex items-center bg-white text-teal-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-teal-50 hover:text-teal-700 shadow-md font-montserrat"
             >
-              Let's Get Started
+              Let\'s Get Started
               <ArrowRight className="ml-3 h-6 w-6" />
             </Link>
           </div>
