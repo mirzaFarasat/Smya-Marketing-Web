@@ -31,7 +31,7 @@ export default function ServicesPage() {
       icon: <PenTool className="h-12 w-12 text-blue-600" />,
       title: "Content Creation",
       description:
-        "Stand out with bold, creative content that captures attention and tells your brand\'s story.",
+        "Stand out with bold, creative content that captures attention and tells your brand's story.",
       accentColor: "blue-600",
     },
     {
@@ -92,28 +92,31 @@ export default function ServicesPage() {
 
   return (
     <div className="bg-white min-h-screen font-sans">
-      <section className="container mx-auto px-8 py-24 md:py-32">
+      <section className="container mx-auto px-8 py-32 md:py-40">
         <motion.div 
           initial="hidden"
           animate="visible"
           variants={containerVariants}
           className="max-w-4xl mx-auto mb-20 text-center"
         >
-          <motion.h1 
+          <motion.div 
             variants={itemVariants}
-            className="text-5xl md:text-6xl font-bold mb-6 text-gray-900 font-montserrat tracking-tight"
+            className="mb-12"
           >
-            Unleash Your Brand\'s{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-purple-600">
-              Potential
-            </span>
-          </motion.h1>
-          <motion.p 
-            variants={itemVariants}
-            className="text-xl md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto font-open-sans"
-          >
-            We\'re a marketing agency that turns ideas into impact with innovative, results-driven solutions.
-          </motion.p>
+            <motion.h1 
+              className="text-5xl md:text-6xl font-bold mb-6 text-gray-900 font-montserrat tracking-tight leading-tight"
+            >
+              Unleash Your Brand's{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-purple-600">
+                Potential
+              </span>
+            </motion.h1>
+            <motion.p 
+              className="text-xl md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto font-open-sans"
+            >
+              We're a marketing agency that turns ideas into impact with innovative, results-driven solutions.
+            </motion.p>
+          </motion.div>
         </motion.div>
 
         <motion.div 
@@ -127,7 +130,7 @@ export default function ServicesPage() {
               key={index}
               variants={cardVariants}
               whileHover="hover"
-              className="bg-white p-8 rounded-lg shadow-md border border-gray-100 hover:shadow-lg group relative overflow-hidden"
+              className="bg-white p-8 rounded-lg shadow-md border border-gray-100 hover:shadow-lg group relative overflow-hidden transition-all duration-300"
             >
               <div className={`absolute top-0 left-0 w-full h-1 bg-${service.accentColor}`} />
               
@@ -139,19 +142,9 @@ export default function ServicesPage() {
                 {service.title}
               </h3>
               
-              <p className="text-gray-600 text-base text-center leading-relaxed mb-6 font-open-sans">
+              <p className="text-gray-600 text-base text-center leading-relaxed font-open-sans">
                 {service.description}
               </p>
-              
-              <div className="text-center">
-                <Link
-                  href="#"
-                  className={`inline-flex items-center text-${service.accentColor} font-medium hover:text-${service.accentColor.replace('600', '700')} font-open-sans`}
-                >
-                  Learn More
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </div>
             </motion.div>
           ))}
         </motion.div>
@@ -161,9 +154,10 @@ export default function ServicesPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
           viewport={{ once: true }}
-          className="mt-24 bg-gradient-to-r from-teal-600 to-purple-600 p-10 md:p-14 rounded-lg shadow-lg relative"
+          className="mt-24 bg-gradient-to-r from-teal-600 to-purple-600 p-10 md:p-14 rounded-lg shadow-lg relative overflow-hidden"
         >
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="absolute inset-0 bg-noise opacity-10 pointer-events-none"></div>
+          <div className="max-w-4xl mx-auto text-center relative">
             <motion.h2 
               className="text-3xl md:text-4xl font-bold mb-6 text-white font-montserrat tracking-tight"
             >
@@ -173,14 +167,14 @@ export default function ServicesPage() {
             <motion.p 
               className="text-white text-lg md:text-xl leading-relaxed mb-8 max-w-2xl mx-auto font-open-sans"
             >
-              Let\'s craft a marketing strategy that grabs attention, drives growth, and sets you apart. Your success starts here.
+              Let's craft a marketing strategy that grabs attention, drives growth, and sets you apart. Your success starts here.
             </motion.p>
             
             <Link
-              href="#"
-              className="inline-flex items-center bg-white text-teal-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-teal-50 hover:text-teal-700 shadow-md font-montserrat"
+              href="/contact"
+              className="inline-flex items-center bg-white text-teal-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-teal-50 hover:text-teal-700 shadow-md transition-all duration-200 font-montserrat"
             >
-              Let\'s Get Started
+              Let's Get Started
               <ArrowRight className="ml-3 h-6 w-6" />
             </Link>
           </div>

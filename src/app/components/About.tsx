@@ -1,5 +1,5 @@
 'use client'
-
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 
 export default function About() {
@@ -196,13 +196,15 @@ export default function About() {
           >
             Let&apos;s collaborate to create something extraordinary. Your success starts here.
           </motion.p>
-          <motion.button 
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 bg-white text-blue-600 font-poppins font-semibold rounded-full shadow-md hover:bg-gray-100 transition-all duration-300"
-          >
-            Get in Touch
-          </motion.button>
+          <Link href="/contact">
+  <motion.button 
+    whileHover={{ scale: 1.05, y: -2 }}
+    whileTap={{ scale: 0.95 }}
+    className="px-8 py-3 bg-white text-blue-600 font-poppins font-semibold rounded-full shadow-md hover:bg-gray-100 transition-all duration-300"
+  >
+    Get in Touch
+  </motion.button>
+</Link>
         </motion.div>
       </div>
     </section>

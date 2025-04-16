@@ -193,7 +193,7 @@ export default function ContactPage() {
           initial="hidden"
           animate="visible"
           variants={containerVariants}
-          className="max-w-4xl mx-auto mb-16 text-center"
+          className="max-w-4xl mx-auto mb-16 text-center pt-12 md:pt-16r"
         >
           <motion.h1
             variants={itemVariants}
@@ -249,7 +249,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-medium text-gray-900">Email</h3>
-                    <p className="text-gray-600">info@smyaagency.com</p>
+                    <p className="text-gray-600">Contact@smya360.com</p>
                   </div>
                 </motion.div>
 
@@ -262,7 +262,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-medium text-gray-900">Address</h3>
-                    <p className="text-gray-600">123 Marketing Street, Suite 100<br />New York, NY 10001</p>
+                    <p className="text-gray-600">Address- A-116 URBTECH TRADE CENTRE <br />SEC - 132 NOIDA -201304</p>
                   </div>
                 </motion.div>
               </div>

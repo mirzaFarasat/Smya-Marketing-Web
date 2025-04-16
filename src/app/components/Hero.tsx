@@ -105,7 +105,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row"
+            className="mt-12 flex justify-center"
           >
             <motion.button 
               whileHover={{ scale: 1.05 }}
@@ -113,13 +113,6 @@ export default function Hero() {
               className="rounded-full bg-white px-8 py-3 text-lg font-semibold text-[#0A0F1C] transition-all hover:bg-opacity-90 shadow-lg hover:shadow-xl"
             >
               Get Started
-            </motion.button>
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="rounded-full border border-white px-8 py-3 text-lg font-semibold text-white transition-all hover:bg-white hover:text-[#0A0F1C] shadow-lg hover:shadow-xl"
-            >
-              Learn More
             </motion.button>
           </motion.div>
         </div>

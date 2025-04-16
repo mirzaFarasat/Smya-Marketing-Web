@@ -98,7 +98,7 @@ export default function ClientsPage() {
         initial="hidden"
         animate="visible"
         variants={containerVariants}
-        className="max-w-4xl mx-auto mb-16 text-center"
+        className="max-w-4xl mx-auto mb-16 text-center pt-12 md:pt-16" // Added padding-top here
       >
         <motion.h1 
           variants={itemVariants}
@@ -286,7 +286,7 @@ export default function ClientsPage() {
             whileTap={{ scale: 0.95 }}
           >
             <Link
-              href="#"
+              href="/contact"
               className="inline-block bg-white text-teal-600 px-8 py-3 rounded-md font-medium hover:bg-teal-50 transition-colors duration-300"
             >
               Contact us today

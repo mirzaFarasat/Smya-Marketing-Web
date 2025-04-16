@@ -75,7 +75,7 @@ export default function AboutPage() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="relative bg-gray-900 py-20 md:py-28 overflow-hidden"
+        className="relative bg-gray-900 pt-32 pb-28 md:pt-40 md:pb-32 overflow-hidden"
       >
         <motion.div
           initial={{ opacity: 0 }}

@@ -239,7 +239,7 @@ export default function Footer() {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <MapPin className="flex-shrink-0 mt-1 mr-3 text-primary-400 group-hover:text-primary-300 transition-colors duration-300" size={18} />
-                <p>123 Marketing Avenue<br />New York, NY 10001</p>
+                <p>Address- A-116 URBTECH TRADE CENTRE <br />SEC - 132 NOIDA -201304</p>
               </motion.div>
               <motion.div
                 variants={itemVariants}
@@ -249,7 +249,7 @@ export default function Footer() {
               >
                 <Mail className="flex-shrink-0 mt-1 mr-3 text-primary-400 group-hover:text-primary-300 transition-colors duration-300" size={18} />
                 <a href="mailto:hello@smya.com" className="hover:text-primary-400 transition-colors duration-300">
-                  hello@smya.com
+                Contact@smya360.com
                 </a>
               </motion.div>
               <motion.div
