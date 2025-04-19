@@ -140,7 +140,7 @@ const WhyChooseUs = () => {
                     transition: { type: "spring", stiffness: 300 },
                   }}
                   className="flex items-start group"
-                >
+                > 
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ type: "spring", stiffness: 300 }}
@@ -211,6 +211,10 @@ const WhyChooseUs = () => {
                 >
                   Elevate Your Brand with SMYA
                 </motion.p>
+
+
+
+                
               </motion.div>
             </motion.div>
           </motion.div>

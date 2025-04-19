@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { Menu, X } from "lucide-react"
+import { Menu, X, MessageCircle } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 
 export default function Navbar() {
@@ -34,17 +34,18 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled 
-          ? "bg-white/90 backdrop-blur-md shadow-lg" 
-          : "bg-gradient-to-r from-teal-700 via-purple-700 to-blue-700"
+          ? "bg-transparent" 
+          : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-8">
-        <div className="flex items-center justify-between h-24">
-          {/* Logo with enhanced hover animation */}
+      <div className="container mx-auto px-6">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo with enhanced visibility */}
           <motion.div
             whileHover={{ scale: 1.05 }}
+            animate={scrolled ? { scale: 1.05 } : { scale: 1 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
             <Link 
@@ -52,20 +53,30 @@ export default function Navbar() {
               className="text-4xl font-bold tracking-tight flex items-center font-montserrat"
             >
               <motion.span 
-                className={`px-3 py-1.5 rounded-lg mr-4 shadow-sm ${
+                className={`px-3 py-1.5 rounded-lg mr-4 shadow-lg ${
                   scrolled 
-                    ? "bg-gradient-to-r from-teal-700 to-blue-700 text-white" 
+                    ? "bg-gradient-to-r from-teal-600 to-blue-600 text-white" 
                     : "bg-white text-teal-700"
                 }`}
-                whileHover={{ rotate: 2 }}
+                whileHover={{ rotate: 2, scale: 1.05 }}
+                style={{ 
+                  boxShadow: scrolled 
+                    ? "0 0 0 2px rgba(255,255,255,0.3), 0 4px 6px rgba(0,0,0,0.1)" 
+                    : "0 4px 6px rgba(0,0,0,0.1)"
+                }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 SMYA
               </motion.span>
               <motion.span 
                 className={`hidden lg:inline font-medium ${
-                  scrolled ? "text-gray-800" : "text-white"
+                  scrolled ? "text-teal-500" : "text-white"
                 }`}
+                style={{
+                  textShadow: scrolled 
+                    ? "0 0 4px rgba(0,0,0,0.5)" 
+                    : "0 0 4px rgba(0,0,0,0.3)"
+                }}
                 whileHover={{ opacity: 0.8 }}
               >
                 Marketing
@@ -73,100 +84,129 @@ export default function Navbar() {
             </Link>
           </motion.div>
 
-          {/* Desktop Navigation with enhanced animations */}
-          <nav className="hidden md:flex items-center space-x-12">
+          {/* Desktop Navigation - with background to ensure visibility */}
+          <nav className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <motion.div
                 key={link.name}
-                whileHover={{ y: -2 }}
-                transition={{ type: "spring", stiffness: 300 }}
+                whileHover={{ y: -2, scale: 1.05 }}
+                animate={scrolled ? { scale: 1.1 } : {}}
+                transition={{ type: "spring", stiffness: 400 }}
               >
                 <Link
                   href={link.href}
-                  className={`font-medium text-lg relative group font-open-sans ${
-                    scrolled ? "text-gray-800 hover:text-teal-700" : "text-white hover:text-teal-100"
+                  className={`font-medium text-sm relative group px-3 py-1 rounded-md transition-all duration-300 ${
+                    scrolled 
+                      ? "text-teal-600 bg-white/80 hover:bg-white shadow-sm" 
+                      : "text-white bg-black/20 backdrop-blur-sm hover:bg-black/30"
                   }`}
                 >
                   {link.name}
                   <motion.span 
-                    className="absolute left-0 bottom-[-4px] w-0 h-0.5 bg-teal-300"
+                    className={`absolute left-0 bottom-[-2px] w-0 h-px ${
+                      scrolled ? "bg-teal-500" : "bg-white/60"
+                    }`}
                     whileHover={{ width: "100%" }}
-                    transition={{ duration: 0.3 }}
+                    transition={{ duration: 0.2 }}
                   />
                 </Link>
               </motion.div>
             ))}
           </nav>
 
-          {/* Desktop CTA with enhanced animation */}
+          {/* Desktop CTA - with improved visibility and matching icon */}
           <motion.div 
-            className="hidden md:block ml-12"
+            className="hidden md:flex"
             whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileTap={{ scale: 0.98 }}
+            animate={scrolled ? { scale: 1.1 } : { scale: 1 }}
           >
             <Link
               href="/contact"
-              className={`px-8 py-3 rounded-full font-semibold text-lg shadow-md transition-all duration-300 font-montserrat ${
+              className={`px-5 py-2 rounded-full text-xs font-medium flex items-center gap-2 transition-all duration-300 ${
                 scrolled 
-                  ? "bg-gradient-to-r from-teal-700 to-blue-700 text-white hover:from-teal-600 hover:to-blue-600" 
-                  : "bg-white text-teal-700 hover:bg-teal-50 hover:text-teal-800"
+                  ? "bg-white text-teal-700 shadow-md hover:bg-gray-100 border border-teal-200" 
+                  : "bg-black/30 backdrop-blur-sm text-white border border-white/40 hover:bg-black/40"
               }`}
             >
+              <MessageCircle 
+                size={14} 
+                strokeWidth={2} 
+                className={scrolled ? "text-teal-700" : "text-white"} 
+                fill={scrolled ? "rgba(20, 184, 166, 0.2)" : "rgba(255, 255, 255, 0.1)"}
+              />
               Let&apos;s Talk
             </Link>
           </motion.div>
 
-          {/* Mobile Menu Button with enhanced animation */}
-          <motion.button
-            className="md:hidden focus:outline-none"
-            onClick={toggleMenu}
+          {/* Mobile Menu Button - with background to ensure visibility */}
+          <motion.div
+            className={`md:hidden p-2 rounded-full transition-all duration-200 ${
+              scrolled 
+                ? "bg-white shadow-md hover:bg-gray-100 border border-teal-200" 
+                : "bg-black/30 backdrop-blur-sm hover:bg-black/40"
+            }`}
             whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            aria-label="Toggle menu"
+            whileTap={{ scale: 0.95 }}
+            animate={scrolled ? { scale: 1.15 } : {}}
           >
-            <motion.div
-              animate={{ rotate: isMenuOpen ? 90 : 0 }}
-              transition={{ duration: 0.3 }}
+            <motion.button
+              onClick={toggleMenu}
+              className="focus:outline-none flex items-center justify-center"
+              aria-label="Toggle menu"
             >
-              {isMenuOpen ? (
-                <X size={32} className={scrolled ? "text-gray-800" : "text-white"} />
-              ) : (
-                <Menu size={32} className={scrolled ? "text-gray-800" : "text-white"} />
-              )}
-            </motion.div>
-          </motion.button>
+              <motion.div
+                animate={{ rotate: isMenuOpen ? 90 : 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                {isMenuOpen ? (
+                  <X 
+                    size={scrolled ? 28 : 24} 
+                    strokeWidth={1.5} 
+                    className={scrolled ? "text-teal-700" : "text-white"} 
+                  />
+                ) : (
+                  <Menu 
+                    size={scrolled ? 28 : 24} 
+                    strokeWidth={1.5} 
+                    className={scrolled ? "text-teal-700" : "text-white"} 
+                  />
+                )}
+              </motion.div>
+            </motion.button>
+          </motion.div>
         </div>
       </div>
 
-      {/* Mobile Navigation with enhanced animations */}
+      {/* Mobile Navigation with improved visibility */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div 
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.2 }}
             className={`md:hidden overflow-hidden ${
               scrolled 
-                ? "bg-white/95 backdrop-blur-md" 
-                : "bg-gradient-to-b from-teal-700 to-purple-700"
+                ? "bg-white/90 backdrop-blur-md shadow-lg" 
+                : "bg-black/70 backdrop-blur-md"
             }`}
           >
-            <nav className="flex flex-col space-y-8 px-8 py-10">
+            <nav className="flex flex-col space-y-4 px-6 py-6">
               {navLinks.map((link, index) => (
                 <motion.div
                   key={link.name}
-                  initial={{ x: -20, opacity: 0 }}
+                  initial={{ x: -10, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: index * 0.1 }}
+                  transition={{ delay: index * 0.05 }}
                 >
                   <Link
                     href={link.href}
-                    className={`font-medium text-xl py-3 border-b ${
+                    className={`font-medium text-sm py-2 block transition-all duration-200 hover:pl-2 ${
                       scrolled 
-                        ? "text-gray-800 border-gray-200 hover:text-teal-700" 
-                        : "text-white border-teal-600/30 hover:text-teal-100"
-                    } block font-open-sans transition-all duration-300 hover:pl-4`}
+                        ? "text-teal-700 hover:text-teal-800 hover:bg-teal-50 rounded-md px-2" 
+                        : "text-white hover:bg-white/10 rounded-md px-2"
+                    }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {link.name}
@@ -174,19 +214,26 @@ export default function Navbar() {
                 </motion.div>
               ))}
               <motion.div
-                initial={{ y: 20, opacity: 0 }}
+                initial={{ y: 10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: navLinks.length * 0.1 }}
+                transition={{ delay: navLinks.length * 0.05 }}
+                className="pt-2"
               >
                 <Link
                   href="/contact"
-                  className={`px-8 py-3 rounded-full font-semibold text-lg text-center mt-8 shadow-md transition-all duration-300 font-montserrat block ${
+                  className={`px-5 py-2 rounded-full text-xs font-medium inline-flex items-center gap-2 transition-all duration-200 ${
                     scrolled 
-                      ? "bg-gradient-to-r from-teal-700 to-blue-700 text-white hover:from-teal-600 hover:to-blue-600" 
-                      : "bg-white text-teal-700 hover:bg-teal-50 hover:text-teal-800"
+                      ? "bg-white text-teal-700 border border-teal-200 hover:bg-gray-100 shadow-sm" 
+                      : "bg-black/30 backdrop-blur-sm text-white border border-white/40 hover:bg-black/40"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
+                  <MessageCircle 
+                    size={14} 
+                    strokeWidth={2} 
+                    className={scrolled ? "text-teal-700" : "text-white"} 
+                    fill={scrolled ? "rgba(20, 184, 166, 0.2)" : "rgba(255, 255, 255, 0.1)"}
+                  />
                   Let&apos;s Talk
                 </Link>
               </motion.div>

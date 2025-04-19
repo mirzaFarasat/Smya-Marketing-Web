@@ -67,41 +67,41 @@ const Services = () => {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto text-center mb-12 md:mb-16"
-        >
-          <motion.span 
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.2 }}
-            className="inline-block mb-4 text-sm font-semibold tracking-wider text-blue-600 uppercase font-open-sans bg-blue-50 px-4 py-1 rounded-full"
-          >
-            Our Expertise
-          </motion.span>
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-gray-600 font-montserrat tracking-tight"
-          >
-            Comprehensive Digital Solutions
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed font-open-sans max-w-3xl mx-auto px-4"
-          >
-            We help brands reach the right people with the right message at the right time through data-driven strategies and creative excellence.
-          </motion.p>
-        </motion.div>
+      <motion.div 
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6 }}
+  className="max-w-4xl mx-auto text-center mb-12 md:mb-16 px-4 py-8"
+>
+  <motion.span 
+    initial={{ opacity: 0, y: 10 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.4, delay: 0.2 }}
+    className="inline-block mb-4 text-sm font-semibold tracking-wider text-blue-600 uppercase font-open-sans bg-blue-50 px-4 py-1 rounded-full"
+  >
+    Our Expertise
+  </motion.span>
+  <motion.h2 
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6, delay: 0.3 }}
+    className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-gray-600 font-montserrat tracking-tight leading-tight"
+  >
+    Comprehensive Digital Solutions
+  </motion.h2>
+  <motion.p 
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6, delay: 0.4 }}
+    className="text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed font-open-sans max-w-3xl mx-auto"
+  >
+    We help brands reach the right people with the right message at the right time through data-driven strategies and creative excellence.
+  </motion.p>
+</motion.div>
 
         <motion.div 
           variants={containerVariants}
