@@ -36,13 +36,13 @@ export default function Navbar() {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled 
-          ? "bg-transparent" 
+          ? "bg-white/70 backdrop-blur-md shadow-sm" 
           : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
-          {/* Logo with enhanced visibility */}
+          {/* Logo - always using the scrolled effect */}
           <motion.div
             whileHover={{ scale: 1.05 }}
             animate={scrolled ? { scale: 1.05 } : { scale: 1 }}
@@ -53,29 +53,19 @@ export default function Navbar() {
               className="text-4xl font-bold tracking-tight flex items-center font-montserrat"
             >
               <motion.span 
-                className={`px-3 py-1.5 rounded-lg mr-4 shadow-lg ${
-                  scrolled 
-                    ? "bg-gradient-to-r from-teal-600 to-blue-600 text-white" 
-                    : "bg-white text-teal-700"
-                }`}
+                className="px-3 py-1.5 rounded-lg mr-4 shadow-lg bg-gradient-to-r from-teal-600 to-blue-600 text-white"
                 whileHover={{ rotate: 2, scale: 1.05 }}
                 style={{ 
-                  boxShadow: scrolled 
-                    ? "0 0 0 2px rgba(255,255,255,0.3), 0 4px 6px rgba(0,0,0,0.1)" 
-                    : "0 4px 6px rgba(0,0,0,0.1)"
+                  boxShadow: "0 0 0 2px rgba(255,255,255,0.3), 0 4px 6px rgba(0,0,0,0.1)"
                 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 SMYA
               </motion.span>
               <motion.span 
-                className={`hidden lg:inline font-medium ${
-                  scrolled ? "text-teal-500" : "text-white"
-                }`}
+                className="hidden lg:inline font-medium text-teal-500"
                 style={{
-                  textShadow: scrolled 
-                    ? "0 0 4px rgba(0,0,0,0.5)" 
-                    : "0 0 4px rgba(0,0,0,0.3)"
+                  textShadow: "0 0 4px rgba(0,0,0,0.5)"
                 }}
                 whileHover={{ opacity: 0.8 }}
               >
@@ -84,7 +74,7 @@ export default function Navbar() {
             </Link>
           </motion.div>
 
-          {/* Desktop Navigation - with background to ensure visibility */}
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <motion.div
@@ -97,8 +87,8 @@ export default function Navbar() {
                   href={link.href}
                   className={`font-medium text-sm relative group px-3 py-1 rounded-md transition-all duration-300 ${
                     scrolled 
-                      ? "text-teal-600 bg-white/80 hover:bg-white shadow-sm" 
-                      : "text-white bg-black/20 backdrop-blur-sm hover:bg-black/30"
+                      ? "text-teal-600 bg-white/20 backdrop-blur-sm hover:bg-white/30" 
+                      : "text-white bg-black/20 hover:bg-black/30"
                   }`}
                 >
                   {link.name}
@@ -114,7 +104,7 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Desktop CTA - with improved visibility and matching icon */}
+          {/* Desktop CTA */}
           <motion.div 
             className="hidden md:flex"
             whileHover={{ scale: 1.05 }}
@@ -126,7 +116,7 @@ export default function Navbar() {
               className={`px-5 py-2 rounded-full text-xs font-medium flex items-center gap-2 transition-all duration-300 ${
                 scrolled 
                   ? "bg-white text-teal-700 shadow-md hover:bg-gray-100 border border-teal-200" 
-                  : "bg-black/30 backdrop-blur-sm text-white border border-white/40 hover:bg-black/40"
+                  : "bg-black/30 text-white border border-white/40 hover:bg-black/40"
               }`}
             >
               <MessageCircle 
@@ -139,12 +129,12 @@ export default function Navbar() {
             </Link>
           </motion.div>
 
-          {/* Mobile Menu Button - with background to ensure visibility */}
+          {/* Mobile Menu Button */}
           <motion.div
             className={`md:hidden p-2 rounded-full transition-all duration-200 ${
               scrolled 
                 ? "bg-white shadow-md hover:bg-gray-100 border border-teal-200" 
-                : "bg-black/30 backdrop-blur-sm hover:bg-black/40"
+                : "bg-black/30 hover:bg-black/40"
             }`}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
@@ -178,7 +168,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Navigation with improved visibility */}
+      {/* Mobile Navigation */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div 
@@ -189,7 +179,7 @@ export default function Navbar() {
             className={`md:hidden overflow-hidden ${
               scrolled 
                 ? "bg-white/90 backdrop-blur-md shadow-lg" 
-                : "bg-black/70 backdrop-blur-md"
+                : "bg-black/70"
             }`}
           >
             <nav className="flex flex-col space-y-4 px-6 py-6">
@@ -224,7 +214,7 @@ export default function Navbar() {
                   className={`px-5 py-2 rounded-full text-xs font-medium inline-flex items-center gap-2 transition-all duration-200 ${
                     scrolled 
                       ? "bg-white text-teal-700 border border-teal-200 hover:bg-gray-100 shadow-sm" 
-                      : "bg-black/30 backdrop-blur-sm text-white border border-white/40 hover:bg-black/40"
+                      : "bg-black/30 text-white border border-white/40 hover:bg-black/40"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >

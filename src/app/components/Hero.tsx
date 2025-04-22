@@ -2,8 +2,10 @@
 
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 
 export default function Hero() {
+  const router = useRouter()
   const cursorX = useMotionValue(0)
   const cursorY = useMotionValue(0)
 
@@ -26,6 +28,10 @@ export default function Hero() {
     window.addEventListener('mousemove', handleMouseMove)
     return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [cursorX, cursorY])
+
+  const handleGetStarted = () => {
+    router.push('/contact')
+  }
 
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-[#0A0F1C]">
@@ -111,6 +117,8 @@ export default function Hero() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="rounded-full bg-white px-8 py-3 text-lg font-semibold text-[#0A0F1C] transition-all hover:bg-opacity-90 shadow-lg hover:shadow-xl"
+              onClick={handleGetStarted}
+              aria-label="Navigate to Contact page"
             >
               Get Started
             </motion.button>
